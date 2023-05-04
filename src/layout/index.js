@@ -1,2 +1,2 @@
-// Layout là nới chứa các content(component) cứng
-export { default, default as DefaultLayout } from './DefaultLayout'
+// Layout là nới chứa các component tĩnh
+export { default, default as DefaultLayout } from './DefaultLayout';
