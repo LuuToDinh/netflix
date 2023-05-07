@@ -1,0 +1,34 @@
+.movie-item {
+    display: flex;
+    padding: 12px;
+}
+
+.poster {
+    // width: 70px;
+    height: 70px;
+    object-fit: cover;
+}
+
+.info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 64px;
+    margin-left: 20px;
+    overflow: hidden;
+}
+
+.name {
+    font-size: 1.4rem;
+
+    display: inline-block;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.release {
+    font-size: 1.2rem;
+}

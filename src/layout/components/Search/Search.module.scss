@@ -32,5 +32,15 @@
     &.show {
         opacity: 1;
         width: 260px;
+        margin-left: 10px;
     }
+}
+
+// Tippy
+.search-result {
+    width: 454px;
+}
+
+.search-popper {
+    padding: 12px 0;
 }
