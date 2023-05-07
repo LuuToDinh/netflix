@@ -1,0 +1,21 @@
+.link {
+    font-size: 1.6rem;
+    padding: 10px;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        transform: scale(0, 1);
+        height: 1px;
+        background-color: var(--primary);
+        transition: transform 0.2s ease-in;
+    }
+
+    &.active {
+        color: var(--primary);
+        &::after {
+            transform: scale(1);
+        }
+    }
+}

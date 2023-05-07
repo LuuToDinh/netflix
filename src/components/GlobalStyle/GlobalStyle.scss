@@ -1,3 +1,57 @@
+@import 'normalize.css';
+
 :root {
     --primary: #e50914;
+    --white: #fff;
+    --black: #000;
+    --text-color: rgba(22, 24, 35, 1);
+    --text-color--dark: #ddd;
+    --text-color-hover--dark: #a7a7a7;
+    --background-color--dark: #111111;
+
+    --font-family: 'Netflix Sans', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Ubuntu', sans-serif;
+
+    --header-height: 78px;
+    --grid-spacer: 38px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: var(--font-family);
+    line-height: 1.5;
+    color: var(--text-color--dark);
+    background-color: var(--background-color--dark);
+}
+
+@font-face {
+    font-family: Netflix Sans;
+    src: url('/assets/fonts/NetflixSans.woff2');
+}
+
+button,
+input,
+[tabindex] {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+a {
+    color: var(--text-color--dark);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--text-color-hover--dark);
+    text-decoration: none;
 }

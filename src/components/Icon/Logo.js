@@ -7,7 +7,7 @@ function Logo({ className, height = '40px', width = '148px' }) {
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
             // xmlns:xlink="http://www.w3.org/1999/xlink"
-            ariaHidden="true"
+            aria-hidden="true"
             role="img"
             className={className}
             fill="currentColor"
