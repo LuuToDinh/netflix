@@ -8,6 +8,7 @@ import styles from './Search.module.scss';
 import routes from '~/config/routes';
 import Popper from '~/components/Popper';
 import MovieItem from '~/components/MovieItem';
+import { useDebounce } from '~/hooks';
 
 const cx = classNames.bind(styles);
 
@@ -15,6 +16,8 @@ function Search() {
     const [valueInput, setValueInput] = useState('');
     const [searchResult, setSearchResult] = useState([]);
     const [isFocused, setIsFocused] = useState(false);
+
+    const debounceSearch = useDebounce(valueInput, 500);
 
     const inputSearch = useRef();
 
@@ -66,16 +69,16 @@ function Search() {
     }, []);
 
     useEffect(() => {
-        if (valueInput.trim()) {
+        if (debounceSearch) {
             fetch(
-                `https://api.themoviedb.org/3/search/movie?api_key=a0428189f9595e2d84e4f041863dd2e0&query=${valueInput}&include_adult=true&language=en-US&page=1`,
+                `https://api.themoviedb.org/3/search/movie?api_key=a0428189f9595e2d84e4f041863dd2e0&query=${debounceSearch}&include_adult=true&language=en-US&page=1`,
             )
                 .then((res) => res.json())
                 .then((res) => setSearchResult(res.results.slice(0, 5)));
         } else {
             setSearchResult([]);
         }
-    }, [valueInput]);
+    }, [debounceSearch]);
 
     return (
         <Tippy
