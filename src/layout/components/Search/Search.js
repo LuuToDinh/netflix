@@ -9,6 +9,7 @@ import routes from '~/config/routes';
 import Popper from '~/components/Popper';
 import MovieItem from '~/components/MovieItem';
 import { useDebounce } from '~/hooks';
+import { Link } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
@@ -66,6 +67,7 @@ function Search() {
         return () => {
             window.removeEventListener('click', handleIsClickOutside);
         };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     useEffect(() => {
@@ -89,10 +91,12 @@ function Search() {
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <Popper className={cx('search-popper')}>
                         {searchResult.map((data) => {
-                            return <MovieItem key={data.id} data={data} />;
+                            return <MovieItem className={cx('movie-search')} key={data.id} data={data} />;
                         })}
 
-                        <span className={cx('more-btn')}>View more results</span>
+                        <Link to="#" className={cx('more-btn')}>
+                            View more results
+                        </Link>
                     </Popper>
                 </div>
             )}

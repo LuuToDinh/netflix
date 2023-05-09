@@ -1,0 +1,75 @@
+// Menu
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.wrapper {
+    animation: fadeIn 0.3s ease-in;
+}
+
+.menu {
+    min-width: 223px;
+    padding: 8px 0;
+
+    .menu-item {
+        background-color: var(--background-color--dark);
+        color: var(--white);
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px 8px 10px 16px;
+
+        &:hover {
+            color: var(--text-color-hover--dark);
+            background: rgba(0, 0, 0, 0.3);
+        }
+    }
+}
+
+// Header
+.header {
+    position: relative;
+    align-items: center;
+    user-select: none;
+    display: flex;
+    height: 50px;
+    overflow: hidden;
+}
+
+.header-icon {
+    padding: 10px 28px;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.header-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// Menu item container
+.items-container {
+    max-height: 520px;
+    overflow-y: auto;
+}
+
+.separate {
+    border-top: 1px solid rgba(255, 255, 255, 0.75);
+}

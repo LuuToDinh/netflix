@@ -11,9 +11,9 @@ const getSourceImg = (path) => {
     return `https://image.tmdb.org/t/p/original${path}`;
 };
 
-function MovieItem({ to, data }) {
+function MovieItem({ className, to, data }) {
     return (
-        <Link to={'/'} className={cx('movie-item')}>
+        <Link to={'/'} className={cx('movie-item', className)}>
             <Image className={cx('poster')} src={getSourceImg(data.backdrop_path)} alt="" />
 
             <div className={cx('info')}>

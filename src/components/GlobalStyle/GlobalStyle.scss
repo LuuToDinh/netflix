@@ -7,7 +7,7 @@
     --text-color: rgba(22, 24, 35, 1);
     --text-color--dark: #ddd;
     --text-color-hover--dark: #a7a7a7;
-    --background-color--dark: #111111;
+    --background-color--dark: #111;
 
     --font-family: 'Netflix Sans', 'Helvetica Neue', 'Segoe UI', 'Roboto', 'Ubuntu', sans-serif;
 
@@ -31,11 +31,28 @@ body {
     line-height: 1.5;
     color: var(--text-color--dark);
     background-color: var(--background-color--dark);
+    overflow-y: overlay;
 }
 
 @font-face {
     font-family: Netflix Sans;
     src: url('/assets/fonts/NetflixSans.woff2');
+}
+
+// Scroll bar
+html *::-webkit-scrollbar {
+    border-radius: 0;
+    width: 8px;
+}
+
+html *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: #dedddd;
+}
+
+html *::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: transparent;
 }
 
 button,

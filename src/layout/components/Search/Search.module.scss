@@ -42,5 +42,24 @@
 }
 
 .search-popper {
-    padding: 12px 0;
+    padding: 12px 0 0;
+}
+
+.movie-search:hover {
+    opacity: 0.8;
+}
+
+.more-btn {
+    display: block;
+    text-align: center;
+    padding: 0px 0 12px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #408bea;
+    font-style: italic;
+}
+
+.more-btn:hover {
+    opacity: 0.8;
+    color: #408bea;
 }

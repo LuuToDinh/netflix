@@ -13,14 +13,13 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    height: 64px;
     margin-left: 20px;
     overflow: hidden;
 }
 
 .name {
     font-size: 1.4rem;
+    line-height: 1.4;
 
     display: inline-block;
     display: -webkit-box;
@@ -30,5 +29,6 @@
 }
 
 .release {
+    margin-top: 4px;
     font-size: 1.2rem;
 }

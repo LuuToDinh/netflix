@@ -1,0 +1,80 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-color);
+    background-color: var(--white);
+    min-width: 110px;
+    padding: 9px 6px;
+    border-radius: 4px;
+    user-select: none;
+    text-align: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+// Button types
+.primary {
+    background-color: var(--primary);
+    color: var(--white);
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), var(--primary);
+    }
+}
+
+.outline {
+    background-color: var(--white);
+    color: rgba(22, 24, 35, 0.75);
+    border: 1px solid rgba(22, 24, 35, 0.12);
+
+    &:hover {
+        background-color: rgba(22, 24, 35, 0.03);
+    }
+}
+
+.rounded {
+    color: rgba(22, 24, 35, 0.75);
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 8px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 999px;
+
+    &:hover {
+        border-color: rgba(22, 24, 35, 0.2);
+        background-color: rgb(255, 255, 255);
+    }
+}
+
+// Button sizes
+.large {
+    min-width: 168px;
+    padding: 12px 6px;
+    font-size: 1.8rem;
+    line-height: 2.5rem;
+    font-weight: 600;
+}
+
+.small {
+    min-width: 88px;
+    padding: 3px 6px;
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+    font-weight: 600;
+}
+
+// Icon
+.icon {
+    display: inline-flex;
+    justify-content: center;
+    width: 24px;
+}
+
+.left-icon {
+    margin-right: 4px;
+}
+
+.right-icon {
+    margin-left: 4px;
+}
