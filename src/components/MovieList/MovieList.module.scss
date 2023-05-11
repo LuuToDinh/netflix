@@ -1,1 +1,40 @@
 // Movie list
+.wrapper {
+    width: 100%;
+    padding: 92px 8px 0;
+}
+
+.topic {
+    margin: 0 40px;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.movie-list {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+
+    overflow-y: hidden;
+}
+
+.movie-item {
+    width: 300px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    cursor: pointer;
+    // padding để có chỗ trống scale
+    padding: 30px 0;
+    transition: all 0.25s linear;
+
+    &:hover {
+        scale: 1.1;
+        margin-right: 38px;
+    }
+}
+
+.thumbnail {
+    width: 100%;
+    border-radius: 4px;
+}

@@ -65,7 +65,9 @@ function Home() {
                 <div className={cx('fadeout-bottom')}></div>
             </div>
 
+            <MovieList topic="Top Rated" path="/movie/top_rated" />
             <MovieList topic="Popular" path="/movie/popular" />
+            <MovieList topic="Now Playing" path="/movie/now_playing" />
         </div>
     );
 }

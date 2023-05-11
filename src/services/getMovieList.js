@@ -17,6 +17,8 @@ const getMovieList = async ({
             },
         });
 
+        console.log(path);
+
         return response;
     } catch (err) {
         console.error(err);

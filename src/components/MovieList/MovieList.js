@@ -8,7 +8,7 @@ import MovieItem from './MovieItem';
 
 const cx = classNames.bind(styles);
 
-function MovieList({ topic = 'Popular', path = '/movie/popular' }) {
+function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
     const [moiveList, setMovieList] = useState([]);
 
     const fetchApi = async (path) => {
@@ -21,19 +21,23 @@ function MovieList({ topic = 'Popular', path = '/movie/popular' }) {
 
     useEffect(() => {
         fetchApi(path);
-    }, [path]);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
-        <nav className="wrapper">
+        <nav className={cx('wrapper', className)}>
             <h2 className={cx('topic')}>{topic}</h2>
-            {moiveList.map((result) => (
-                <MovieItem key={result.id} data={result} />
-            ))}
+            <div className={cx('movie-list')}>
+                {moiveList.map((result) => (
+                    <MovieItem key={result.id} data={result} />
+                ))}
+            </div>
         </nav>
     );
 }
 
 MovieList.propTypes = {
+    className: PropTypes.string,
     topic: PropTypes.string.isRequired,
     path: PropTypes.string.isRequired,
 };
