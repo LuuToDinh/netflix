@@ -1,15 +1,15 @@
 import classNames from 'classnames/bind';
 import { useEffect, useRef, useState } from 'react';
 import Tippy from '@tippyjs/react/headless';
+import { Link } from 'react-router-dom';
 
 import { Search as SearchIcon } from '~/components/Icon';
 import styles from './Search.module.scss';
-
 import routes from '~/config/routes';
 import Popper from '~/components/Popper';
 import MovieItem from '~/components/MovieItem';
 import { useDebounce } from '~/hooks';
-import { Link } from 'react-router-dom';
+import { search } from '~/services';
 
 const cx = classNames.bind(styles);
 
@@ -72,11 +72,13 @@ function Search() {
 
     useEffect(() => {
         if (debounceSearch) {
-            fetch(
-                `https://api.themoviedb.org/3/search/movie?api_key=a0428189f9595e2d84e4f041863dd2e0&query=${debounceSearch}&include_adult=true&language=en-US&page=1`,
-            )
-                .then((res) => res.json())
-                .then((res) => setSearchResult(res.results.slice(0, 5)));
+            const fetchApi = async () => {
+                const response = await search({ query: debounceSearch, include_adult: true });
+
+                setSearchResult(response.results.slice(0, 5));
+            };
+
+            fetchApi();
         } else {
             setSearchResult([]);
         }
