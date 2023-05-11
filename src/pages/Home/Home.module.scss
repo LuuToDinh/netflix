@@ -1,0 +1,92 @@
+.wrapper {
+}
+
+.intro {
+    position: relative;
+}
+
+.intro-video {
+    width: 100%;
+    position: relative;
+    z-index: -1;
+}
+
+.intro-content {
+    position: absolute;
+    bottom: 50%;
+    left: 38px;
+}
+
+.intro-overview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px;
+    margin-bottom: 28px;
+    width: 55rem;
+}
+
+.intro-title {
+    font-size: 6rem;
+    color: var(--white);
+}
+
+.intro-desc {
+    font-size: 1.8rem;
+    color: var(--white);
+}
+
+.intro-btns {
+    display: flex;
+
+    .intro-play-btn {
+        margin-right: 12px;
+        padding: 8px 12px;
+
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.75);
+        }
+    }
+
+    .intro-info-btn {
+        padding: 8px 20px;
+        background-color: rgba(109, 109, 110, 0.7);
+        color: var(--white);
+
+        &:hover {
+            background-color: rgba(109, 109, 110, 0.4);
+        }
+    }
+}
+
+.intro-play-btn,
+.intro-info-btn {
+    span {
+        font-size: 2rem;
+    }
+}
+
+.sound-btn {
+    display: flex;
+    padding: 8px;
+    border-radius: 50%;
+    position: absolute;
+    right: 140px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color: rgba(42, 42, 42, 0.6);
+}
+
+.sound-icon {
+    font-size: 2.6rem;
+}
+
+.fadeout-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 88px;
+    background-image: linear-gradient(180deg, transparent, var(--black));
+}

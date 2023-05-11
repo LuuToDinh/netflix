@@ -4,3 +4,6 @@ export { default as Search } from './Search';
 export { default as Profile } from './Profile';
 export { default as Languages } from './Languages';
 export { default as Logout } from './Logout';
+export { default as HighVolume } from './HighVolume';
+export { default as Muted } from './Muted';
+export { default as Info } from './Info';
