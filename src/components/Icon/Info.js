@@ -1,13 +1,6 @@
 function Info({ className, width = '2.4rem', height = '2.4rem' }) {
     return (
-        <svg
-            className={className}
-            width={width}
-            height={height}
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            class="more-info_svg__Hawkins-Icon more-info_svg__Hawkins-Icon-Standard"
-        >
+        <svg className={className} width={width} height={height} fill="none" xmlns="http://www.w3.org/2000/svg">
             <path
                 fillRule="evenodd"
                 clipRule="evenodd"

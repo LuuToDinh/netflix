@@ -7,14 +7,14 @@ import Image from '../Image';
 
 const cx = classNames.bind(styles);
 
-const getSourceImg = (path) => {
-    return `https://image.tmdb.org/t/p/original${path}`;
-};
-
 function MovieItem({ className, to, data }) {
     return (
         <Link to={'/'} className={cx('movie-item', className)}>
-            <Image className={cx('poster')} src={getSourceImg(data.backdrop_path)} alt="" />
+            <Image
+                className={cx('poster')}
+                src={data.backdrop_path && process.env.REACT_APP_IMG_URL + data.backdrop_path}
+                alt=""
+            />
 
             <div className={cx('info')}>
                 <h3 className={cx('name')}>{data.title}</h3>

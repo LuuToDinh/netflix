@@ -1,7 +1,7 @@
 # TODO after complete
 
 Make memu user
-Make more pages like: Movies, Mylist,...
+Make more pages like: pass args,...
 
 # Getting Started with Create React App
 

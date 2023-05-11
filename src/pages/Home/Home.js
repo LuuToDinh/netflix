@@ -7,6 +7,7 @@ import { Muted, HighVolume, Info } from '~/components/Icon';
 import Button from '~/components/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
+import MovieList from '~/components/MovieList/MovieList';
 
 const cx = classNames.bind(styles);
 
@@ -63,6 +64,8 @@ function Home() {
 
                 <div className={cx('fadeout-bottom')}></div>
             </div>
+
+            <MovieList topic="Popular" path="/movie/popular" />
         </div>
     );
 }
