@@ -11,6 +11,25 @@ import MovieList from '~/components/MovieList/MovieList';
 
 const cx = classNames.bind(styles);
 
+const topics = [
+    {
+        title: 'Now Playing',
+        path: '/movie/now_playing',
+    },
+    {
+        title: 'Popular',
+        path: '/movie/popular',
+    },
+    {
+        title: 'Upcoming',
+        path: '/movie/upcoming',
+    },
+    {
+        title: 'Top Rated',
+        path: '/movie/top_rated',
+    },
+];
+
 function Home() {
     const [isSoundOn, setIsSoundOn] = useState(false);
 
@@ -65,9 +84,9 @@ function Home() {
                 <div className={cx('fadeout-bottom')}></div>
             </div>
 
-            <MovieList topic="Top Rated" path="/movie/top_rated" />
-            <MovieList topic="Popular" path="/movie/popular" />
-            <MovieList topic="Now Playing" path="/movie/now_playing" />
+            {topics.map((topic, index) => (
+                <MovieList key={index} topic={topic.title} path={topic.path} />
+            ))}
         </div>
     );
 }
