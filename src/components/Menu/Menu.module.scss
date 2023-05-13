@@ -44,11 +44,14 @@
 // Header
 .header {
     position: relative;
+    color: var(--white);
     align-items: center;
     user-select: none;
     display: flex;
     height: 50px;
     overflow: hidden;
+    font-size: 1.8rem;
+    font-weight: 700;
 }
 
 .header-icon {

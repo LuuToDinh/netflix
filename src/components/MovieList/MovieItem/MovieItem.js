@@ -5,9 +5,9 @@ import Image from '~/components/Image';
 
 const cx = classNames.bind(styles);
 
-function MovieItem({ data }) {
+function MovieItem({ data, onClick }) {
     return (
-        <button className={cx('movie-item')}>
+        <button className={cx('movie-item')} onClick={onClick}>
             <Image
                 className={cx('thumbnail')}
                 src={data.backdrop_path && process.env.REACT_APP_IMG_URL + data.poster_path}
@@ -18,6 +18,7 @@ function MovieItem({ data }) {
 
 MovieItem.propTypes = {
     data: PropTypes.object,
+    onClick: PropTypes.func,
 };
 
 export default MovieItem;
