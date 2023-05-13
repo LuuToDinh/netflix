@@ -1,6 +1,7 @@
 .wrapper {
     width: 100%;
-    height: 100px;
+    height: 200px;
+    margin-top: 54px;
     border-top: 1px solid var(--white);
     background-color: var(--background-color--dark);
     font-weight: 600;
@@ -11,6 +12,10 @@
 
 .copyright-link {
     font-size: 1.8rem;
-    color: var(--text-color--dark);
     font-weight: 600;
+    color: var(--primary);
+
+    &:hover {
+        color: #fc8803de;
+    }
 }

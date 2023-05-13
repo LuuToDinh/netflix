@@ -6,9 +6,9 @@ const cx = classNames.bind(styles);
 function Footer() {
     return (
         <footer className={cx('wrapper')}>
-            Copyright (c) 2023 -&nbsp;
+            © 2023 Made with ❤️ by &nbsp;
             <a className={cx('copyright-link')} href="https://github.com/LuuToDinh/netflix">
-                Link github
+                Luu To Dinh
             </a>
         </footer>
     );

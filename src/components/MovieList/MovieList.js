@@ -15,6 +15,7 @@ const cx = classNames.bind(styles);
 
 function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
     const [moiveList, setMovieList] = useState([]);
+    const [dataMovieDetail, setDataMovieDetail] = useState({});
     const [isShowMovieDetail, setIsShowMovieDetail] = useState(false);
 
     let isDrag = false;
@@ -70,8 +71,9 @@ function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
         isDrag = false;
     };
 
-    const handleMovieDetail = (e, data) => {
+    const handleMovieDetail = (data) => {
         setIsShowMovieDetail(!isShowMovieDetail);
+        setDataMovieDetail(data);
     };
 
     useEffect(() => {
@@ -109,8 +111,8 @@ function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
                         <MovieItem
                             key={result.id}
                             data={result}
-                            onClick={(e) => {
-                                handleMovieDetail(e, result);
+                            onClick={() => {
+                                handleMovieDetail(result);
                             }}
                         />
                     ))}
@@ -131,7 +133,7 @@ function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
 
             {isShowMovieDetail && (
                 <Modal onClick={handleMovieDetail}>
-                    <MovieDetail />
+                    <MovieDetail data={dataMovieDetail} />
                 </Modal>
             )}
         </nav>

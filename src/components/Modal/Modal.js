@@ -7,7 +7,7 @@ const cx = classNames.bind(styles);
 function Modal({ children, onClick }) {
     return (
         <div className={cx('wrapper')}>
-            <div className={cx('content')}>{children}</div>
+            {children}
             <div className={cx('layer')} onClick={onClick}></div>
         </div>
     );

@@ -4,16 +4,16 @@ import { useState } from 'react';
 import images from '~/assets/images';
 
 function Image({ className, src, alt, customFallBack = images.noImage, onClick, ...otherProps }) {
-    const [fallBack, setFallBack] = useState('');
+    const [sourceImg, setSourceImg] = useState(src);
 
     const handleError = () => {
-        setFallBack(customFallBack);
+        setSourceImg(customFallBack);
     };
 
     return (
         <img
             className={className}
-            src={fallBack || src}
+            src={sourceImg || customFallBack}
             alt={alt}
             onClick={onClick}
             onError={handleError}
@@ -24,7 +24,6 @@ function Image({ className, src, alt, customFallBack = images.noImage, onClick, 
 
 Image.propTypes = {
     className: PropTypes.string,
-    src: PropTypes.string.isRequired,
     alt: PropTypes.string,
     fallBack: PropTypes.string,
     onClick: PropTypes.func,
