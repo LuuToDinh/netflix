@@ -13,6 +13,8 @@ import MovieDetail from '../MovieDetail';
 
 const cx = classNames.bind(styles);
 
+// > 90 will trigger the dragging of the movie list
+const draggableDistance = 90;
 function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
     const [moiveList, setMovieList] = useState([]);
     const [dataMovieDetail, setDataMovieDetail] = useState({});
@@ -21,6 +23,8 @@ function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
     let isDrag = false;
     let startClientX = 0;
     let endClientX = 0;
+    let startClientXMovie = 0;
+    let endClientXMovie = 0;
 
     const currentList = useRef();
 
@@ -57,10 +61,9 @@ function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
     };
 
     const handleEndDrag = (e) => {
-        e.preventDefault();
         endClientX = e.clientX;
 
-        if (isDrag && Math.abs(endClientX - startClientX) > 90) {
+        if (isDrag && Math.abs(endClientX - startClientX) > draggableDistance) {
             if (endClientX > startClientX) {
                 handlePrevList();
             } else {
@@ -71,9 +74,11 @@ function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
         isDrag = false;
     };
 
-    const handleMovieDetail = (data) => {
-        setIsShowMovieDetail(!isShowMovieDetail);
-        setDataMovieDetail(data);
+    const handleMovieDetail = (e, data) => {
+        if (Math.abs(startClientXMovie - endClientXMovie) <= draggableDistance) {
+            setIsShowMovieDetail(!isShowMovieDetail);
+            setDataMovieDetail(data);
+        }
     };
 
     useEffect(() => {
@@ -111,8 +116,12 @@ function MovieList({ className, topic = 'Popular', path = '/movie/popular' }) {
                         <MovieItem
                             key={result.id}
                             data={result}
-                            onClick={() => {
-                                handleMovieDetail(result);
+                            onMouseDown={(e) => {
+                                startClientXMovie = e.clientX;
+                            }}
+                            onMouseUp={(e) => {
+                                endClientXMovie = e.clientX;
+                                handleMovieDetail(e, result);
                             }}
                         />
                     ))}
