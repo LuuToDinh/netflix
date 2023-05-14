@@ -28,6 +28,7 @@
     "babel-plugin-module-resolver": "^5.0.0",
     "customize-cra": "^1.0.0",
     "gh-pages": "^5.0.0",
+    "nth-check": "^2.1.1",
     "react-app-rewired": "^2.2.1"
   },
   "scripts": {
