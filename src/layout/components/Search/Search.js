@@ -92,6 +92,7 @@ function Search() {
             render={(attrs) => (
                 <div className={cx('search-result')} tabIndex="-1" {...attrs}>
                     <Popper className={cx('search-popper')}>
+                        {console.log(searchResult)}
                         {searchResult.map((data) => {
                             return <MovieItem className={cx('movie-search')} key={data.id} data={data} />;
                         })}
