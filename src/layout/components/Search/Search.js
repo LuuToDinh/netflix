@@ -73,7 +73,7 @@ function Search() {
     useEffect(() => {
         if (debounceSearch) {
             const fetchApi = async () => {
-                const response = await search({ query: debounceSearch, include_adult: true });
+                const response = await search({ query: debounceSearch, include_adult: false });
 
                 setSearchResult(response.results.slice(0, 5));
             };
