@@ -93,7 +93,7 @@ function Home() {
                 </div>
                 {isShowIntroDetail && (
                     <Modal onClick={() => setShowIntroDetail(false)}>
-                        <MovieDetail data={movieIntro} />
+                        <MovieDetail data={movieIntro} callback={setShowIntroDetail} />
                     </Modal>
                 )}
 
